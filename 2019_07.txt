@@ -1,0 +1,352 @@
+
+
+----------==========----------==========----------==========----------
+
+
+"Eat Your Own Catfood."
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
+2019/07/30
+
+
+BUGFIX
+
+
+	win32/sysinfo/sysmon.c
+		n_sysinfo_sysmon_exit()
+			OLD : sysmon.exe is not closed
+			NEW : fixed
+	win32/win_scrollbar.c
+		n_win_scrollbar_on_settingchange() : darkmode : STRIPE
+			OLD : not supported
+			NEW :     supported
+	win32/win_smallbutton.c
+		dark mode
+			OLD : hard to recognize
+			NEW : fixed
+	win32/win_txtbox.c
+		layout
+			OLD : a little inaccurate
+			NEW : fixed
+
+	All
+		Toolband : dark mode
+			OLD : not supported
+			NEW :     supported
+	Felis
+		Win9x : dark mode
+			OLD : crash
+			NEW : fixed
+		Home Button : press while loading
+			OLD : crash
+			NEW : fixed
+	Nonnon Freecell
+		WinVista/7 : DWM is ON : Fade : Splash Screen
+			OLD : not smooth
+			NEW : fixed
+	Nonnon Paint
+		Grabber : on VirtualPC
+			OLD : you cannot select all
+			NEW : fixed
+			[!] : special patch is added
+			[?] : VirtualPC sends WM_MOVE before WM_LBUTTONDBLCLK
+	Nonnon Spider
+		WinVista/7 : DWM is ON : Fade : Splash Screen
+			OLD : not smooth
+			NEW : fixed
+	OrangeCat
+		View Change
+			OLD : broken
+			NEW : fixed
+			[x] : unused multi-thread code causes
+		WinVista/7 : Style "Aero" : Breadcrumb Address Band : hover color
+			OLD : low contrast
+			NEW : fixed
+		WinVista/7 : DWM is ON : Fade
+			OLD : not smooth
+			NEW : fixed
+		DWM and Dark Mode are ON : priority
+			OLD : DWM
+			NEW : Dark Mode
+		DnD : OrangeCat to OrangeCat : source window : cursor
+			OLD : arrow
+			NEW : wait(busy)
+		Hover2Tooltip : multi-thread
+			OLD : double-free
+			NEW : fixed
+			[!] : crash suddenly at navigation
+			[x] : BUGFIX @ 2019/07/10
+		Win9x : DnD
+			OLD : redraw error
+			NEW : fixed
+		WinVista/7 : when system theme is chnaged
+			OLD : not apply accurately
+			NEW : fixed
+
+
+NEW_FEATURE
+
+
+	com/*.c
+		URL
+			OLD : uri
+			NEW : url
+
+	project/readme/nonnon_win.c
+		Developing Environment
+			NEW : Me and Vista are added
+
+	win32/gdi/doublebuffer_32bpp.c
+		released
+			NEW : always use 32bpp DIBSection
+	win32/win_scrollbar.c
+		Color Scheme : Dark Mode
+			NEW : re-tuned
+	win32/win_txtbox.c
+		n_win_txtbox_metrics_vertical_scpacing()
+			NEW : line spacing adjuster
+		N_WIN_TXTBOX_OPTION_ALWAYS_SLOWMODE
+			NEW : render as same as slow mode
+			[!] : for combobox
+
+	@project/text2html.c
+		space characters
+			OLD : one space  will "&nbsp;"
+			NEW : two spaces will "&nbsp;&nbsp;"
+
+	Felis
+		Progress
+			OLD : Win32 Progress Bar OwnerDraw + percent based
+			NEW : Nonnon Original Throbber     +    time based
+			[?] : IWebBrowser2's progress is flaky
+		URL
+			OLD : uri
+			NEW : url
+	OrangeCat
+		Hover2Tooltip : tip : background color
+			OLD : solid
+			NEW : opaque
+		Item View : Delayed Loader : Booster
+			OLD : 50 msec.
+			NEW : game.slice_msec
+		WinXP : Visual Style
+			OLD : basic Luna only
+			NEW : all theme available
+			[!] : XP only
+		WinVista/7 : DWM is ON : Scroll Pager : shaft
+			NEW : semi-transparent color
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
+2019/07/20
+
+
+BUGFIX
+
+
+	neutral/string_path.c
+		n_string_path_commandline_option()
+			OLD : space character is not fully processed
+			NEW : fixed
+
+	win32/win_scrollbar.c
+		n_win_scrollbar_draw_always() : heavy redraw when a thumb doesn't move
+			OLD : once fixed but not fixed yet
+			NEW : fixed
+		n_win_scrollbar_arrowbutton_onoff()
+			OLD : not initialaized in some cases
+			NEW : fixed
+	win32/win_txtbox.c
+		n_win_txtbox_draw_partial() : corner color
+			OLD : not beautiful
+			NEW : fixed
+		Scrollbar : vertical : unit
+			OLD :  line based
+			NEW : pixel based
+			[!] : resolution for undraggable margin
+
+	CatPad
+		Win9x : when resized, when dropped : scrollbar
+			OLD : not refreshed
+			NEW : fixed
+		64-bit version : High-DPI
+			OLD : window size will shrink
+			NEW : patched
+	Felis
+		High-DPI : 100% to 200%
+			OLD : tool band has border
+			NEW : fixed
+			[x] : Windows' bug
+	OrangeCat
+		stand-alone version : Search Shortcut
+			OLD : crash
+			NEW : fixed
+			[!] : n_string_path_cat() causes
+			[!] : multiple space characters cause
+		Hover2Tooltip : multi-thread
+			OLD : misbehave in some cases
+			NEW : fixed
+		Item View : when breadcrumb navigation
+			OLD : a patched-focused item blinks in some cases
+			NEW : fixed
+			[!] : when hovered then focus is moved
+		Info View : when renamed : item position is moved
+			OLD : older position blinks
+			NEW : fixed
+
+
+NEW_FEATURE
+
+
+	neutral/thread.c
+		n_thread_is_available
+			NEW : is multi-threading available
+		n_thread_sync()
+			NEW : thread synchronizer
+		Win32
+			OLD : CreateThread()
+			NEW : _beginthreadex()
+			[?] : MSDN : use _beginthreadex() with CRT functions
+
+	project/compile.bat
+		linker
+			NEW : -mthreads is added
+			[!] : no problem in Win95
+
+	win32/win_scrollbar.c
+		Version 5.0
+			NEW : redraw count is reduced
+
+	Felis
+		IDocHostUIHandler
+			NEW : implemented
+			[!] : theme for form buttons available
+			[!] : High-DPI problem is solved
+			[?] : __stdcall is needed
+	OrangeCat
+		Item View : Sync : delayed loading and input
+			NEW : re-tuned
+			[!] : smoother than older
+		Item View : Sync : Delayed Load Booster
+			NEW : boost when a cursor doesn't move
+		DWM is ON : Hover2Tooltip
+			NEW : re-tuned
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
+2019/07/10
+
+
+BUGFIX
+
+
+	neutral/bmp/_transparent.c
+		multi-thread
+			OLD : unsafe
+			NEW : rewritten
+			[!] : usage is changed
+			[!] : n_bmp structure has .transparent_onoff
+	neutral/bmp/transform.c
+		n_bmp_smoothshrink()
+			OLD : set transparent off
+			NEW : do nothing
+			[?] : no effect
+
+	win32/win_scrollbar.c
+		n_win_scrollbar_draw_always()
+			OLD : heavy redraw
+			NEW : fixed
+
+	Nonnon FTP
+		item addition/deletion
+			OLD : view is not refreshed
+			NEW : fixed
+			[!] : INTERNET_FLAG_NO_CACHE_WRITE is needed
+			[!] : INTERNET_FLAG_RELOAD is also needed, see MSDN
+			[x] : ??? @ 2019/02/28
+	OrangeCat
+		Hover2Tooltip
+			OLD : not smooth when a folder has a lot of items
+			NEW : patched
+			[!] : like "C:\Windows\WinSxS"
+		View Switcher : when resized : autoscroll 
+			OLD : centering
+			NEW : smart resolver available
+		Progress : when a window is closed while loading
+			OLD : crash
+			NEW : fixed
+			[!] : ITaskbarList causes
+		Win9x : Item View
+			OLD : too many redrawing
+			NEW : fixed
+		Win9x : Sysmon
+			OLD : initialaized but not used
+			NEW : removed
+	Watchcat
+		scrollbar
+			OLD : not sync'ed
+			NEW : fixed
+
+
+NEW_FEATURE
+
+
+	all
+		multi-thread
+			OLD : Y axis divided
+			NEW : scanline alternation
+			[!] : a little slower but easy to implement
+
+	game/game.c
+		n_game_on_paint_partial()
+			NEW : partial copy
+
+	neutral/bmp/draw.c
+		n_bmp_roundrect()
+			NEW : multi-thread available
+	neutral/bmp/filter.c
+		n_bmp_rasterizer_main()
+			NEW : multi-thread available
+	neutral/posix.c
+		moved
+			OLD : n_posix_multithread_onoff()
+			NEW : n_thread_onoff()
+	neutral/thread.c
+		released
+			NEW : Win32/pthread auto-switcher
+
+	win32/win_iconbutton.c
+		when pressed #1
+			OLD : system compatible
+			NEW : sinking effect
+			[!] : Nonnon Original Behavior
+		when pressed #2
+			NEW : focus to a parent window
+
+	OrangeCat
+		Search
+			NEW : multi-thread available
+		Style : "8"
+			OLD : system compatible
+			NEW : sinking effect
+			[!] : Nonnon Original Behavior
+
+
+----------==========----------==========----------==========----------
+

@@ -12,6 +12,45 @@
 Change Log
 
 
+2019/08/01 : Release #2 : Recall
+
+
+BUGFIX
+
+
+	win32/sysinfo/_debug.c
+		n_sysinfo_window(), class()
+			NEW : parameter "always_on" is added
+
+	Nonnon Paint
+		when redraw area is out of bound
+			OLD : crash
+			NEW : fixed
+			[!] : multi-thread causes
+	Watchcat
+		Info Mode #1
+			OLD : not refreshed until changed
+			NEW : fixed
+		Info Mode #2
+			OLD : memory leak
+			MEW : fixed
+
+
+NEW_FEATURE
+
+
+	Watchcat
+		vertical spacing
+			OLD : default
+			NEW : larger than older
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
 2019/07/30
 
 

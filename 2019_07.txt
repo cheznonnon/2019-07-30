@@ -12,7 +12,7 @@
 Change Log
 
 
-2019/08/01 : Release #3 : Recall
+2019/08/03 : Release #3 : Recall
 
 
 BUGFIX

@@ -12,6 +12,54 @@
 Change Log
 
 
+2019/08/01 : Release #3 : Recall
+
+
+BUGFIX
+
+
+	win32/win/set.c
+		64-bit Version : n_win_set() : High-DPI : 175%
+			OLD : inaccurate
+			NEW : fixed
+	win32/win_scrollbar.c
+		64-bit Version : n_win_scrollbar_window()
+			OLD : patched code
+			NEW : no patch needed
+	win32/win_txtbox.c
+		Classic Theme : bottom-right corner
+			OLD : redraw error
+			NEW : fixed
+			[x] : BUGFIX @ 2019/07/30
+
+	CatPad
+		Win8 or later : initial window state
+			OLD : not smooth
+			NEW : fixed
+			[!] : maximized or normal window
+		64-bit Version : High-DPI : windows size
+			OLD : shrink / once fixed but not fixed yet
+			NEW : fixed again
+			[x] : MSVC++'s bug
+		Win7 or earlier : Statusbar : Classic Style
+			OLD : not accurate
+			NEW : fixed
+	Nonnon Paint
+		64-bit Version : Scroll Pager
+			OLD : misbehave about max
+			NEW : fixed
+	OrangeCat
+		Gallery Mode : middle button click/wheeling
+			OLD : broken
+			NEW : fixed
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
 2019/08/01 : Release #2 : Recall
 
 

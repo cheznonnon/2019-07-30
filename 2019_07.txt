@@ -12,6 +12,39 @@
 Change Log
 
 
+2019/08/04 : Release #4 : Recall
+
+
+BUGFIX
+
+
+	win32/win_txtbox.c
+		N_WIN_TXTBOX_STYLE_CMB_BDR : High-DPI : 200%
+			OLD : misbehave
+			NEW : fixed
+			[!] : currently highlight color is disabled
+
+	All
+		High-DPI : 200%
+			OLD : window size is larger than needed
+			NEW : fixed
+	Neko no Te
+		UI : layout
+			OLD : inaccurate
+			NEW : fixed
+	OrangeCat
+		Item View : Gallery Mode : change
+			OLD : search result will be reset
+			NEW : fixed
+			[x] : BUGFIX @ 2019/08/03
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
 2019/08/03 : Release #3 : Recall
 
 

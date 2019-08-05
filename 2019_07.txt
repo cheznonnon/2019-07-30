@@ -12,6 +12,35 @@
 Change Log
 
 
+2019/08/05 : Release #5 :  some more : help me plz, orz
+
+
+BUGFIX
+
+
+	win32/win/set.c
+		n_win_set()
+			OLD : misbehave in some client size
+			NEW : fixed
+	win32/win_combobox.c
+		frame border
+			OLD : no highlight
+			NEW : fixed
+			[x] : BUGFIX @ 2019/08/04
+
+	Marie
+		windowing
+			OLD : misbehave in some image size
+			NEW : fixed
+			[!] : n_win_set() causes
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
 2019/08/04 : Release #4 : Recall
 
 

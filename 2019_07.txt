@@ -12,7 +12,35 @@
 Change Log
 
 
-2019/08/05 : Release #5 :  some more : help me plz, orz
+2019/08/06 : Release #6 : Recall : fix for regression
+
+
+BUGFIX
+
+
+	win32/win_combobox.c
+		n_win_combo_move()
+			OLD : margin is subtracted
+			NEW : do nothing
+			[!] : usage is changed
+
+	All
+		GUI layout
+			OLD : inaccurate
+			NEW : fixed
+	Nonnon Paint
+		Grabber : Scroll Pager
+			OLD : inputtable when thumb is dragged
+			NEW : fixed
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
+2019/08/05 : Release #5 : some more : help me plz, orz
 
 
 BUGFIX
